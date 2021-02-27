@@ -8,6 +8,44 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+// Solution #1
+// function anagrams(stringA, stringB) {
+//   stringA = stringA.replace(/[^\w]/g, "").toLowerCase();
+//   stringB = stringB.replace(/[^\w]/g, "").toLowerCase();
+//
+//   if (stringA.length !== stringB.length) return false;
+//
+//   const distributionA = mapToDistribution(stringA);
+//   const distributionB = mapToDistribution(stringB);
+//
+//   for (const char in distributionA) {
+//     if (distributionA[char] !== distributionB[char]) return false;
+//   }
+//
+//   return true;
+// }
+//
+// const mapToDistribution = (str) => {
+//   const distribution = {};
+//   for (const char of str) {
+//     distribution[char] = distribution[char] ? distribution[char] + 1 : 1;
+//   }
+//   return distribution;
+// }
+
+// Solution #2
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+const cleanString = (str) => {
+  return str.replace(/[^\w]/g, "")
+            .toLowerCase()
+            .split("")
+            .sort()
+            .join("");
+}
+
+
 
 module.exports = anagrams;

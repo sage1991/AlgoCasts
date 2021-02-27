@@ -11,7 +11,7 @@ function maxChar(str) {
     distribution[char] = distribution[char] ? distribution[char] + 1 : 1
   }
 
-  let maxCount = 0;
+  let maxCount = 0;ㅊ
   let maxChar = "";
   for (const char in distribution) {
     if (distribution[char] > maxCount) {
