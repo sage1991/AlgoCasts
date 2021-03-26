@@ -8,25 +8,25 @@
 //   vowels('Why?') --> 0
 
 // Solution #1
-// function vowels(str) {
-//   str = str.toLowerCase();
-//
-//   const vowelList = [ "a", "e", "i", "o", "u" ];
-//   let count = 0;
-//
-//   for (const char of str) {
-//     if (vowelList.includes(char)) {
-//       count++;
-//     }
-//   }
-//
-//   return count;
-// }
+function vowels(str) {
+  str = str.toLowerCase();
+
+  const vowelList = [ "a", "e", "i", "o", "u" ];
+  let count = 0;
+
+  for (const char of str) {
+    if (vowelList.includes(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
 
 
 // Solution #2
-function vowels(str) {
-  return str.length - str.toLowerCase().replace(/[aeiou]/g, "").length;
-}
+// function vowels(str) {
+//   return str.length - str.replace(/[aeiou]/gi, "").length;
+// }
 
 module.exports = vowels;
